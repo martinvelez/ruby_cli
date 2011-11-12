@@ -16,8 +16,8 @@ Currently, RubyCLI is short and simple. It uses Ruby's core Option Parser librar
 
 What does a command line application library need to do?
 1. Provide a user interface (UI)
- * Process options (use Ruby's Option Parser)
- * Process arguments
+ a. Process options (use Ruby's Option Parser)
+ b. Process arguments
 2. Pass options and arguments as parameters to other functions defined in libraries or other executables.
 
 What does a command line application library need not do?
