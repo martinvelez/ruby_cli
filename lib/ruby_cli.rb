@@ -104,13 +104,16 @@ module RubyCLI
 	# Performs post-parse processing on options
 	# For instance, some options may be mutually exclusive
 	# Redefine if you need to process options.
-	def process_options() true end	
+	def process_options() return true end	
 	
 	# Redefine if you need to process options.
-	def process_arguments() true end
+	def process_arguments() return true end
 	
 	# Application logic
-	def command() raise "This method should be overwritten." end
+	def command
+		raise "This method should be overwritten." 
+		return 0
+	end
 	
 	def output_help(exit_code) 
 		puts @opt_parser
