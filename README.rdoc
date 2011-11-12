@@ -33,14 +33,14 @@ gem install ruby_cli
 There are other tools out there which can be used to write command line 
 applications. 
 
-- clamp[http://github.com/mdub/clamp]
-** I don't like to learn new DSLs
-- optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html]
-** This library uses this to parse options.
-- Thor[http://github.com/wycats/thor]
-** It does not try to follow the Unix Philosophy.
-- Clip[http://clip.rubyforge.org/]
-** OptionParser already exists.
+1. clamp[http://github.com/mdub/clamp]
+   * I don't like to learn new DSLs
+2. optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html]
+   * This library uses this to parse options.
+3. Thor[http://github.com/wycats/thor]
+   * It does not try to follow the Unix Philosophy.
+4. Clip[http://clip.rubyforge.org/]
+   * OptionParser already exists.
 
 = Usage
 
