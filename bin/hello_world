@@ -1,0 +1,17 @@
+#!/usr/bin/ruby
+
+require 'ruby_cli'
+
+class App
+	include RubyCLI	
+
+	def command
+		puts "Hello World"
+	end
+
+end
+
+if __FILE__ == $0
+	app = App.new(ARGV)
+	app.run
+end
