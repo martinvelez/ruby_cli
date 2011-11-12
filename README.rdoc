@@ -10,7 +10,8 @@ License:: Distributed under the same terms as Ruby
 programswith a command line interface (CLI) which follows the Unix Philosophy 
 design method outlined in http://www.faqs.org/docs/artu/ch01s06.html.
 
-Currently, RubyCLI is short and simple. It uses Ruby's core Option Parser library.
+Currently, RubyCLI is short and simple. It uses Ruby's core 
+optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html] library.
 
 = Design
 
