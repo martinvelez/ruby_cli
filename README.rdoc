@@ -25,6 +25,18 @@ What does a command line application library need not do?
 1. A command line application does not need to validate options or arguments. 
    * Libraries or other executables should do this.
 
+This is the core algorithm of any Ruby CLI application
+ def run
+   if parse_options? && arguments_Valid?
+     process_options
+     process_arguments
+     output_options_and_arguments# def run
+     command
+   else
+     output_help(1)
+   end
+ end
+
 = Installation
 
 gem install ruby_cli
@@ -51,7 +63,7 @@ applications.
    * At this point you have options and arguments available.
    * Pass them as parameters to library functions or as options/arguments to other executables.
    * Be smart!  Have libraries and other executables do the heavy work.  
-   * Be smart!  Fewer lines of code (LOC) is good.
+   * Be smart!  Fewer lines of code (LOC) here is an indication that your code will be easy to maintain.
 7. Define command options and defaults (optional)
    * This is where you define a hash for your options and set the default values.
    * Remember, options by definition are optional.
