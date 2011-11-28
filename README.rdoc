@@ -61,7 +61,7 @@ applications.
 
 This example demonstrates how to use RubyCLI to create a 
 
-	#!/usr/bin/ruby
+ #!/usr/bin/ruby
 
 	require 'ruby_cli'
 
