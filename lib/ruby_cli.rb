@@ -4,32 +4,7 @@ require 'optparse'
 # command line applications which follow the Unix Philosophy design method 
 # (http://www.faqs.org/docs/artu/ch01s06.html).
 #
-# What does a command line application library need to do?
-#	1. Provide a UI
-#	a. Process options (use Ruby's Option Parser)
-# b. Process arguments
-# 2. Pass options and arguments as parameters to other functions defined in
-#	libraries or other executables.
-#
-# What does a command line application library need not do?
-# 1. A command line application does not need to validate options or arguments.
-# Libraries or other executables should do this.
-#
-# This module serves as a mixin for Ruby Command Line Applications (CLI).
-# Ruby commands can be written much easier by including this class and following
-# the convention that I have outlined here.
-#
-# This is the core algorithm of any Ruby CLI application.
-# def run
-#   if parse_options? && arguments_valid?
-#		process_options
-#     process_arguments
-#     output_options_and_arguments if @default_options[:verbose]
-#     command
-#   else
-#     output_help(1)
-#   end
-#  end
+# See README.rdoc for more information. 
 module RubyCLI
 
 	# Initialization of this application requires the command line arguments.
@@ -62,7 +37,6 @@ module RubyCLI
     end
   end
 		
-		
 	# Parse the options
 	# Redefine this method if you want to add command specific options
 	def parse_options?
@@ -78,17 +52,17 @@ module RubyCLI
 			opts.on('-V','--verbose','Run verbosely') do 
 				@default_options[:verbose] = true
 			end
-			# TODO: If you redefine, you can add command specific options here!
+			# If you redefine, you can add command specific options here!
 		end
 		@opt_parser.parse!(@default_argv) rescue return false
-		true
+		return true
 	end
 
 	# Check if the required number of arguments remains in the 
 	# argv array after it has been processed by the option parser
 	def arguments_valid?() 
 		return true if @arguments.size == 0
-		@default_argv.size == @arguments.size 
+		return @default_argv.size == @arguments.size 
 	end
 
 	def output_options_and_arguments
