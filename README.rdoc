@@ -66,17 +66,17 @@ This example demonstrates how to use RubyCLI to create a
  require 'ruby_cli'
 
  class App
- 		include RubyCLI	
+   include RubyCLI	
 
-	def command
-		puts "hello world"
-	end
+ def command
+   puts "hello world"
+ end
 
  end
 
  if __FILE__ == $0
-	app = App.new(ARGV)
-	app.run
+   app = App.new(ARGV) 
+   app.run
  end
 
 = Dependencies
