@@ -7,7 +7,7 @@ License:: Distributed under the same terms as Ruby
 = Description 
 
 "RubyCLI" is a Ruby library which factors out the code needed to create Ruby 
-programswith a command line interface (CLI) which follows the Unix Philosophy 
+programs with a command line interface (CLI) and that follow the Unix Philosophy 
 design method outlined in http://www.faqs.org/docs/artu/ch01s06.html.
 
 Currently, RubyCLI is short and simple. It uses Ruby's core 
@@ -22,7 +22,8 @@ What does a command line application library need to do?
 2. Pass options and arguments as parameters to other functions defined in libraries or other executables.
 
 What does a command line application library need not do?
-	1. A command line application does not need to validate options or arguments. Libraries or other executables should do this.
+1. A command line application does not need to validate options or arguments. 
+   * Libraries or other executables should do this.
 
 = Installation
 
@@ -33,53 +34,50 @@ gem install ruby_cli
 There are other tools out there which can be used to write command line 
 applications. 
 
-1. clamp[http://github.com/mdub/clamp]
-   * I don't like to learn new DSLs
-2. optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html]
-   * This library uses this to parse options.
-3. Thor[http://github.com/wycats/thor]
-   * It does not try to follow the Unix Philosophy.
-4. Clip[http://clip.rubyforge.org/]
-   * OptionParser already exists.
+1. clamp[http://github.com/mdub/clamp] - I don't like to learn new DSLs
+2. optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html] - This library uses this to parse options.
+3. Thor[http://github.com/wycats/thor] - It does not try to follow the Unix Philosophy.
+4. Clip[http://clip.rubyforge.org/] - OptionParser already exists.
 
 = Usage
 
-0. New File
-1. Require the ruby_cli gem.
-2. Create a Ruby class. 
-3. Call it "App", for example.  
-4. Include the RubyCLI module.
-5. Define the command method.
-	* This is where your program does the actual work.  
-	* At this point you have options and arguments available.
-	* Pass them as parameters to library functions or as options/arguments to other executables.
-	* Be smart!  Have libraries and other executables do the heavy work.  
-	* Be smart!  Fewer lines of code (LOC) is good.
-6. Define command options and defaults (optional)
-	* This is where you define a hash for your options and set the default values.
-	* Remember, options by definition are optional.
-7. Define command arguments and defaults (optional)
+1. New File
+2. Require the ruby_cli gem.
+3. Create a Ruby class. 
+4. Call it "App", for example.  
+5. Include the RubyCLI module.
+6. Define the command method.
+	 * This is where your program does the actual work.  
+	 * At this point you have options and arguments available.
+	 * Pass them as parameters to library functions or as options/arguments to other executables.
+	 * Be smart!  Have libraries and other executables do the heavy work.  
+	 * Be smart!  Fewer lines of code (LOC) is good.
+7. Define command options and defaults (optional)
+	 * This is where you define a hash for your options and set the default values.
+	 * Remember, options by definition are optional.
+8. Define command arguments and defaults (optional)
 
-= Usage Example
+= Usage Example 1
 
 This example demonstrates how to use RubyCLI to create a 
-	#!/usr/bin/ruby
 
-	require 'ruby_cli'
+#!/usr/bin/ruby
 
-	class App
-		include RubyCLI	
+require 'ruby_cli'
 
-		def command
-			puts "hello world"
-		end
+class App
+	include RubyCLI	
 
+	def command
+		puts "hello world"
 	end
 
-	if __FILE__ == $0
-		app = App.new(ARGV)
-		app.run
-	end
+end
+
+if __FILE__ == $0
+	app = App.new(ARGV)
+	app.run
+end
 
 = Dependencies
 
