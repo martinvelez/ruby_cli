@@ -61,25 +61,23 @@ applications.
 
 This example demonstrates how to use RubyCLI to create a 
 
-<tt>
-#!/usr/bin/ruby
+	#!/usr/bin/ruby
 
-require 'ruby_cli'
+	require 'ruby_cli'
 
-class App
-	include RubyCLI	
+	class App
+		include RubyCLI	
 
-	def command
-		puts "hello world"
+		def command
+			puts "hello world"
+		end
+
 	end
 
-end
-
-if __FILE__ == $0
-	app = App.new(ARGV)
-	app.run
-end
-</tt>
+	if __FILE__ == $0
+		app = App.new(ARGV)
+		app.run
+	end
 
 = Dependencies
 
