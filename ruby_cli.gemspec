@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = 'ruby_cli'
-	s.version = '0.0.3'
+	s.version = '0.0.4'
 	s.date = '2011-11-27'
 	s.summary = "A command line application library"
 	s.description = "Factors out code needed to create Ruby command line applications"
