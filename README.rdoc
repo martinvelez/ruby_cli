@@ -61,6 +61,7 @@ applications.
 
 This example demonstrates how to use RubyCLI to create a 
 
+<tt>
 #!/usr/bin/ruby
 
 require 'ruby_cli'
@@ -78,6 +79,7 @@ if __FILE__ == $0
 	app = App.new(ARGV)
 	app.run
 end
+</tt>
 
 = Dependencies
 
