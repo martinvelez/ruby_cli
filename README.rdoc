@@ -60,6 +60,7 @@ applications.
 = Usage Example 1
 
 This example demonstrates how to use RubyCLI to create a 
+
 	#!/usr/bin/ruby
 
 	require 'ruby_cli'
@@ -81,6 +82,7 @@ This example demonstrates how to use RubyCLI to create a
 = Dependencies
 
 * Ruby 1.8.7 or greater
+* None other
 
 = Acknowledgements
 
