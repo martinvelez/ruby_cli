@@ -60,7 +60,6 @@ applications.
 = Usage Example 1
 
 This example demonstrates how to use RubyCLI to create a 
-
 	#!/usr/bin/ruby
 
 	require 'ruby_cli'
