@@ -36,12 +36,11 @@ module RubyCLI
       output_help(1)
     end
   end
-		
-	# Parse the options
-	# Redefine this method if you want to add command specific options
-	def parse_options?
+
+	# Redefine this method if you want to add command specific options	
+	def define_option_parser
 		#configure an OptionParser
-		@opt_parser = OptionParser.new do |opts|		
+		OptionParser.new do |opts|		
 			opts.banner = "Usage: #{@command_name} [OPTIONS]... [ARGUMENTS]..."
 			opts.separator ""
 			opts.separator "Specific options:"
@@ -52,8 +51,13 @@ module RubyCLI
 			opts.on('-V','--verbose','Run verbosely') do 
 				@default_options[:verbose] = true
 			end
-			# If you redefine, you can add command specific options here!
+			# If you redefine, you can copy this method and add command specific options here!
 		end
+	end
+
+	# Parse the options
+	def parse_options?
+		@opt_parser = define_option_parser	
 		@opt_parser.parse!(@default_argv) rescue return false
 		return true
 	end
@@ -81,7 +85,7 @@ module RubyCLI
 	# Redefine if you need to process options.
 	def process_options() return true end	
 	
-	# Redefine if you need to process options.
+	# Redefine if you need to process arguments.
 	def process_arguments() return true end
 	
 	# Application logic
