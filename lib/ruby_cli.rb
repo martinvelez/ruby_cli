@@ -73,7 +73,7 @@ module RubyCLI
     puts "OPTIONS:"
     @default_options.each {|name, value| puts "#{name} = #{value}"}
     @options.each {|name, value| puts "#{name} = #{value}"}
-		puts "No options" if @options.length == 0
+		puts "No options" if @options.length == 0 and @default_options == 0
 		
 		puts "ARGUMENTS:"
     @arguments.each {|name,value| puts "#{name} = #{value}"}
