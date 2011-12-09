@@ -39,7 +39,12 @@ This is the core algorithm of any Ruby CLI application
 
 = Installation
 
-gem install ruby_cli
+Rubygems:
+ gem install ruby_cli
+
+Not Rubygems:
+1. use only files in lib folder
+2. Use the RubyCLI module as a mixin for your CLI application
 
 = Alternative Tools
 
@@ -71,7 +76,7 @@ applications.
 
 = Usage Example 1
 
-This example demonstrates how to use RubyCLI to create a 
+This example demonstrates how to use RubyCLI to create a command line application. 
 
  #!/usr/bin/ruby
 
