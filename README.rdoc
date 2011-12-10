@@ -1,6 +1,6 @@
 = RubyCLI
 
-Author:: Martin Velez
+Author:: Martin Velez[http://www.martinvelez.com]
 Copyright:: Copyright (c) 2011 Martin Velez
 License:: Distributed under the same terms as Ruby
 
