@@ -103,7 +103,7 @@ This example demonstrates how to use RubyCLI to create a command line applicatio
 
 == Acknowledgements
 
-Todd Werth[http://blog.toddwerth.com/entries/5]
+{Todd Werth}[http://blog.toddwerth.com/entries/5]
 * I used his Ruby command line application skeleton code.  I borrowed 
 some ideas from there.
 
