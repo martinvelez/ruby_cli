@@ -1,10 +1,10 @@
-= Ruby CLI
+= RubyCLI
 
 Author:: Martin Velez
 Copyright:: Copyright (c) 2011 Martin Velez
 License:: Distributed under the same terms as Ruby
 
-= Description 
+== Description 
 
 "RubyCLI" is a Ruby library which factors out the code needed to create Ruby 
 programs with a command line interface (CLI) and that follow the Unix Philosophy 
@@ -13,7 +13,7 @@ design method outlined in http://www.faqs.org/docs/artu/ch01s06.html.
 Currently, RubyCLI is short and simple. It uses Ruby's core 
 optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html] library.
 
-= Design
+== Design
 
 What does a command line application library need to do?
 1. Provide a user interface (UI)
@@ -37,11 +37,16 @@ This is the core algorithm of any Ruby CLI application
    end
  end
 
-= Installation
+== Installation
 
-gem install ruby_cli
-s
-= Alternative Tools
+Rubygems:
+ gem install ruby_cli
+
+Not Rubygems:
+1. use only files in lib folder
+2. Use the RubyCLI module as a mixin for your CLI application
+
+== Alternative Tools
 
 There are other tools out there which can be used to write command line 
 applications. 
@@ -51,7 +56,7 @@ applications.
 3. Thor[http://github.com/wycats/thor] - It does not try to follow the Unix Philosophy.
 4. Clip[http://clip.rubyforge.org/] - OptionParser already exists.
 
-= Usage
+== Usage
 
 1. New File
 2. Require the ruby_cli gem.
@@ -69,9 +74,9 @@ applications.
    * Remember, options by definition are optional.
 8. Define command arguments and defaults (optional)
 
-= Usage Example 1
+== Usage Example 1
 
-This example demonstrates how to use RubyCLI to create a 
+This example demonstrates how to use RubyCLI to create a command line application. 
 
  #!/usr/bin/ruby
 
@@ -96,16 +101,22 @@ This example demonstrates how to use RubyCLI to create a
 * Ruby 1.8.7 or greater
 * None other
 
-= Acknowledgements
+== Acknowledgements
 
 Todd Werth[http://blog.toddwerth.com/entries/5]
 * I used his Ruby command line application skeleton code.  I borrowed 
 some ideas from there.
 
-= TODO
+== TODO
 
 * ?
 
-= Source Code
+== Development
 
-https://github.com/martinvelez/ruby_cli
+=== Source Repository
+ruby_cli is hosted on Github at: 
+ https://github.com/martinvelez/ruby_cli
+ 
+=== Issues and Bug Reports
+Get help, request features, and reports bugs here:
+ https://github.com/martinvelez/ruby_cli/issues

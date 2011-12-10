@@ -8,13 +8,14 @@ require 'optparse'
 module RubyCLI
 
 	# Initialization of this application requires the command line arguments.
-	def initialize(default_argv, command_name)
+	def initialize(default_argv, command_name, usage = "[OPTIONS]... [ARGUMENTS]...")
 		@default_argv = default_argv
 		@default_options = {:help => false, :verbose => false}
 		define_command_options
 		define_command_arguments
 		@opt_parser = nil
 		@command_name = command_name
+		@usage = usage
 	end
 
 	# This method can be overwritten if you want to set defaults for your command
@@ -41,7 +42,7 @@ module RubyCLI
 	def define_option_parser
 		#configure an OptionParser
 		OptionParser.new do |opts|		
-			opts.banner = "Usage: #{@command_name} [OPTIONS]... [ARGUMENTS]..."
+			opts.banner = "Usage: #{@command_name} #{@usage}"
 			opts.separator ""
 			opts.separator "Specific options:"
 			opts.on('-h', '--help', 'displays help information') do
