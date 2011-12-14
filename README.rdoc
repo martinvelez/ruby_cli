@@ -91,16 +91,14 @@ This example demonstrates how to use RubyCLI to create a command line applicatio
 
  end
 
- if __FILE__ == $0
-   app = App.new(ARGV) 
-   app.run
- end
-
+ app = App.new(ARGV) 
+ app.run
+ 
 == Usage Example 2
 
 This example demonstrates how command specific options can be defined easily using
-RubyCLI.  It is taken from the ruby_ngrams gem executable, which I also
-authored.  
+RubyCLI.  It is taken from the ruby_ngrams[https://github.com/martinvelez/ruby_ngrams] 
+gem executable, which I also authored.  
  
  #!/usr/bin/env ruby
 
