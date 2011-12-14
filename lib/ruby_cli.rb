@@ -6,7 +6,6 @@ require 'optparse'
 #
 # See README.rdoc for more information. 
 module RubyCLI
-
 	
 	# Initialization of this application requires the command line arguments.
 	def initialize(default_argv, command_name, usage = "[OPTIONS]... [ARGUMENTS]...")
