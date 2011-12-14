@@ -101,6 +101,7 @@ This example demonstrates how to use RubyCLI to create a command line applicatio
 This example demonstrates how command specific options can be defined easily using
 RubyCLI.  It is taken from the ruby_ngrams gem executable, which I also
 authored.  
+ 
  #!/usr/bin/env ruby
 
  require 'ruby_cli'
