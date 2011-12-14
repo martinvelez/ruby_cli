@@ -43,8 +43,9 @@ Rubygems:
  gem install ruby_cli
 
 Not Rubygems:
-1. use only files in lib folder
-2. Use the RubyCLI module as a mixin for your CLI application
+1. Download from https://github.com/martinvelez/ruby_cli/downloads
+2. Only the lib folder contents are needed
+3. Use the RubyCLI module as a mixin for your CLI application
 
 == Usage
 
