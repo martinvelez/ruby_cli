@@ -7,12 +7,13 @@ require 'optparse'
 # See README.rdoc for more information. 
 module RubyCLI
 
+	
 	# Initialization of this application requires the command line arguments.
 	def initialize(default_argv, command_name, usage = "[OPTIONS]... [ARGUMENTS]...")
 		@default_argv = default_argv
 		@default_options = {:help => false, :verbose => false}
-		define_command_options
-		define_command_arguments
+		initialize_command_options
+		initialize_command_arguments
 		@opt_parser = nil
 		@command_name = command_name
 		@usage = usage
@@ -20,11 +21,11 @@ module RubyCLI
 
 	# This method can be overwritten if you want to set defaults for your command
 	# specific options.
-	def define_command_options() @options = {} end
+	def initialize_command_options() @options = {} end
 	
 	# This method can be overwritten if you want to set defaults for your command
 	# specific arguments.
-	def define_command_arguments() @arguments = {} end
+	def initialize_command_arguments() @arguments = {} end
 	
 	# Run the application
   def run
@@ -38,10 +39,9 @@ module RubyCLI
     end
   end
 
-	# Redefine this method if you want to add command specific options	
-	def define_option_parser
-		#configure an OptionParser
-		OptionParser.new do |opts|		
+	# Parse the options
+	def parse_options?
+		@opt_parser = OptionParser.new do |opts|		
 			opts.banner = "Usage: #{@command_name} #{@usage}"
 			opts.separator ""
 			opts.separator "Specific options:"
@@ -53,16 +53,19 @@ module RubyCLI
 				@default_options[:verbose] = true
 			end
 			# If you redefine, you can copy this method and add command specific options here!
-		end
-	end
-
-	# Parse the options
-	def parse_options?
-		@opt_parser = define_option_parser	
+		end	
+		define_command_option_parsing
 		@opt_parser.parse!(@default_argv) rescue return false
 		return true
 	end
 
+	# Redefine this method if you have command specific options to tell
+	# the OptionParser object how to parse and handle your options
+	# Introduced in versio 0.2.0 to reduce LOC in CLI application
+	# @opt_parser is available at this point
+	def define_command_option_parsing() end
+	
+	
 	# Check if the required number of arguments remains in the 
 	# argv array after it has been processed by the option parser
 	def arguments_valid?() 
