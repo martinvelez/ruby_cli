@@ -83,7 +83,7 @@ This example demonstrates how to use RubyCLI to create a command line applicatio
  require 'ruby_cli'
 
  class App
-   include RubyCLI	
+   include RubyCLI  
 
  def command
    puts "hello world"
@@ -108,33 +108,33 @@ authored.
  require 'ruby_ngrams'
 
  class App
-	 include RubyCLI	
+   include RubyCLI  
 
-	 def initialize_command_options() @options = {:regex => //, :n => 2}	end
+   def initialize_command_options() @options = {:regex => //, :n => 2}  end
 
-	 def define_command_option_parsing
-		 @opt_parser.on('-n', '--n NUM', Integer, 'set length n for n-grams') do |n|
-			 @options[:n] = n
-		 end
-		 @opt_parser.on('-r', '--regex "REGEX"', Regexp, 'set regex to split string into tokens') do |r|
-			 @options[:regex] = r
-		 end
-	 end
+   def define_command_option_parsing
+     @opt_parser.on('-n', '--n NUM', Integer, 'set length n for n-grams') do |n|
+       @options[:n] = n
+     end
+     @opt_parser.on('-r', '--regex "REGEX"', Regexp, 'set regex to split string into tokens') do |r|
+       @options[:regex] = r
+     end
+   end
 
-	 def command
-		 # If arguments were provided, then they have to be names of files.
-		 # These files will be handled using Ruby's ARGF builtin variable.
-		 # If arguments are not filenames, then this application will produce a 
-		 # a runtime error informing the user that the given file could not be opened.
+   def command
+     # If arguments were provided, then they have to be names of files.
+     # These files will be handled using Ruby's ARGF builtin variable.
+     # If arguments are not filenames, then this application will produce a 
+     # a runtime error informing the user that the given file could not be opened.
 
- 		 # ARGF is a stream designed for use in scripts that process files given as 
-		 #	command-line arguments or passed in via STDIN.
-		 # The arguments passed to your script are stored in the ARGV Array, 
-		 #	one argument per element. ARGF assumes that any arguments that aren’t 
-		 # filenames have been removed from ARGV.
-		 text = ARGF.read
-		 text.ngrams(@options).each { |ngram| puts ngram.inspect }
-	 end
+     # ARGF is a stream designed for use in scripts that process files given as 
+     #  command-line arguments or passed in via STDIN.
+     # The arguments passed to your script are stored in the ARGV Array, 
+     #  one argument per element. ARGF assumes that any arguments that aren’t 
+     # filenames have been removed from ARGV.
+     text = ARGF.read
+     text.ngrams(@options).each { |ngram| puts ngram.inspect }
+   end
  end
 
  app = App.new(ARGV, __FILE__)
