@@ -44,7 +44,7 @@ This is the core algorithm of any Ruby CLI application
 
 === Not Rubygems:
 1. Download ruby_cli[https://github.com/martinvelez/ruby_cli/downloads]
-2. Use only files in lib folder
+2. Only the lib folder contents are needed
 3. Use the RubyCLI module as a mixin for your CLI application
 
 == Alternative Tools
@@ -86,9 +86,9 @@ This example demonstrates how to use RubyCLI to create a command line applicatio
  class App
    include RubyCLI  
 
- def command
-   puts "hello world"
- end
+   def command
+     puts "hello world"
+   end
 
  end
 
@@ -129,10 +129,20 @@ gem executable, which I also authored.
  app = App.new(ARGV, __FILE__)
  app.run
 
-= Dependencies
+== Dependencies
 
 * Ruby 1.8.7 or greater
 * None other
+
+== Alternative Tools
+
+There are other tools out there which can be used to write command line 
+applications. 
+
+1. clamp[http://github.com/mdub/clamp] - I don't like to learn new DSLs
+2. optparse[http://ruby-doc.org/stdlib/libdoc/optparse/rdoc/index.html] - This library uses this to parse options.
+3. Thor[http://github.com/wycats/thor] - It does not try to follow the Unix Philosophy.
+4. Clip[http://clip.rubyforge.org/] - OptionParser already exists.
 
 == Acknowledgements
 
@@ -141,7 +151,7 @@ gem executable, which I also authored.
 
 == TODO
 
-* ?
+* Add tests
 
 == Development
 
@@ -150,5 +160,5 @@ ruby_cli is hosted on Github at:
  https://github.com/martinvelez/ruby_cli
  
 === Issues and Bug Reports
-Get help, request features, and reports bugs here:
+Provide feedback, get help, request features, and reports bugs here:
  https://github.com/martinvelez/ruby_cli/issues
