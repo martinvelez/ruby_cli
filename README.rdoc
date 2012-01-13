@@ -39,12 +39,13 @@ This is the core algorithm of any Ruby CLI application
 
 == Installation
 
-Rubygems:
+=== Rubygems:
  gem install ruby_cli
 
-Not Rubygems:
-1. use only files in lib folder
-2. Use the RubyCLI module as a mixin for your CLI application
+=== Not Rubygems:
+1. Download ruby_cli[https://github.com/martinvelez/ruby_cli/downloads]
+2. Use only files in lib folder
+3. Use the RubyCLI module as a mixin for your CLI application
 
 == Alternative Tools
 
