@@ -1,6 +1,6 @@
 = RubyCLI
 
-Author:: {Martin Velez}[http://www.martinvelez.com]
+Author:: {Martin Velez}[https://martinvelez.github.io]
 Copyright:: Copyright (c) 2011 Martin Velez
 License:: Distributed under the same terms as Ruby
 
@@ -43,9 +43,10 @@ This is the core algorithm of any Ruby CLI application
  gem install ruby_cli
 
 === Not Rubygems:
-1. Download ruby_cli[https://github.com/martinvelez/ruby_cli/downloads]
-2. Only the lib folder contents are needed
-3. Use the RubyCLI module as a mixin for your CLI application
+1. {Download ruby_cli}[https://github.com/martinvelez/ruby_cli/archive/master.zip]
+2. Unzip.
+3. Only the lib folder contents are needed
+4. Use the RubyCLI module as a mixin for your CLI application
 
 == Alternative Tools
 
